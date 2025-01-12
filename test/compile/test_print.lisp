@@ -1,0 +1,10 @@
+; test print
+(print 1)
+(print "two")
+(print 0.123456)
+(print '(1 2 3))
+(print ''(1 2 3))
+(print 'symbol)
+(print '(1 (2 3) 4 (5 '(s 7))))
+(print nil)
+(print t)
