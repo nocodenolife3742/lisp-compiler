@@ -5,7 +5,7 @@
 ## 專案架構
 
 - Tokenizer : 用了 [PEGTL](https://github.com/taocpp/PEGTL) 套件，因為 C++ 原生的 Regular Expression 套件效能太慢了。
-- Parser : 只有將最原始的的結構先生成出來，因為要處理 `'` ，實作上可以省去很多麻煩。
+- Parser : 只有將最原始的的結構先生成出來，因為要處理 `'` 這個關鍵字，實作上可以省去很多麻煩。
 - Generator : 實際上他整合了一部分 type checking 及語法分析，主要的功能是把 AST 生成 C++ 代碼。
 - Type Checking : 因為有些函數定義在生成的 C++ 代碼中，因此 Type Checking 的實作分在 Generator 與生成的 C++ 中。
 
@@ -59,6 +59,33 @@
 │       ├── undefined_cdr.lisp
 │       └── undefined_equal.lisp
 └── test.sh
+```
+
+## 支援的關鍵字
+
+```
++
+-
+*
+/
+=
+>
+<
+>=
+<=
+/=
+null
+not
+if
+let
+defun
+car
+cdr
+t
+nil
+progn
+cons
+list
 ```
 
 ## 構建專案
